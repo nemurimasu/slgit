@@ -17,7 +17,7 @@ module Grit
         t.recursive_search(file) # search subdirectories
       end.flatten + blobs.select do |b|
         b.name == file # search our directory
-      end.map do |b| 
+      end.map do |b|
         {:path => "#{b.name}", :blob => b} # wrap blobs in hashes for paths
       end
       # prepend our path to results
